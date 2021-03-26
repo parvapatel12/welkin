@@ -1,0 +1,40 @@
+.bird-diverter-gif {
+  width: 600px;
+  animation: bird-diverter 0.75s infinite;
+}
+
+@keyframes bird-diverter {
+  0% {
+    transform: translate(-5px, -220px) rotate(2deg);
+  }
+  50% {
+    transform: translate(5px, -220px) rotate(-2deg);
+  }
+  100% {
+    transform: translate(-5px, -220px) rotate(2deg);
+  }
+}
+
+.animation-div {
+  position: absolute;
+  width: 100%;
+}
+
+.product-name {
+  width: 100%;
+  margin: 5rem 8rem;
+}
+
+.product-heading {
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #ac2429;
+}
+
+.product-bird-diverter {
+  font-size: 2.9rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #666;
+}
