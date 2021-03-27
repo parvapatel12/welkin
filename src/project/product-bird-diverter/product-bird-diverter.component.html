@@ -2,7 +2,24 @@
 <div class="d-flex flex-row justify-content-center animation-div">
     <img class="bird-diverter-gif" src="assets/birdDiverter.gif">
 </div>
-<div class="product-name">
-    <div class="product-heading">FireFLY<span>®</span></div>
-    <div class="product-bird-diverter">Bird Diverters</div>
+<div class="background-clouds">
+    <img class="clouds-1" appParallax [ratio]="1.5" src="assets/clouds-1.png">
+    <img class="clouds-2" appParallax [ratio]="2" src="assets/clouds-2.png">
+</div>
+<div class="birds">
+    <img class="bird-1" appParallax [ratio]="1.5" src="assets/birds/bird-1.png">
+    <img class="bird-2" appParallax [ratio]="2" src="assets/birds/bird-2.png">
+    <img class="bird-3" appParallax [ratio]="2.5" src="assets/birds/bird-3.png">
+</div>
+
+<div class="content">
+    <div class="d-flex flex-row justify-content-center product-name" [@inOutAnimation]>
+        <div>
+            <div class="product-heading" appParallax [ratio]="1">FireFLY<span>®</span></div>
+            <div class="product-bird-diverter" appParallax [ratio]="1">Bird Diverters</div>
+        </div>
+    </div>
+    <div class="content-1">
+        <div>What is it?</div>
+    </div>
 </div>
