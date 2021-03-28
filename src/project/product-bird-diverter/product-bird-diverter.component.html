@@ -1,25 +1,56 @@
-<app-welkin-header></app-welkin-header>
+<app-welkin-header [scrolledDown]="scrolledDown">
+</app-welkin-header>
+<div>
+
+</div>
 <div class="d-flex flex-row justify-content-center animation-div">
     <img class="bird-diverter-gif" src="assets/birdDiverter.gif">
 </div>
-<div class="background-clouds">
-    <img class="clouds-1" appParallax [ratio]="1.5" src="assets/clouds-1.png">
-    <img class="clouds-2" appParallax [ratio]="2" src="assets/clouds-2.png">
-</div>
-<div class="birds">
-    <img class="bird-1" appParallax [ratio]="1.5" src="assets/birds/bird-1.png">
-    <img class="bird-2" appParallax [ratio]="2" src="assets/birds/bird-2.png">
-    <img class="bird-3" appParallax [ratio]="2.5" src="assets/birds/bird-3.png">
-</div>
+<!--<div class="background-clouds">-->
+<!--    <img class="clouds-1" appParallax [ratio]="1.5" src="assets/clouds-1.png">-->
+<!--    <img class="clouds-2" appParallax [ratio]="2" src="assets/clouds-2.png">-->
+<!--</div>-->
+<!--<div class="birds">-->
+<!--    <img class="bird-1" appParallax [ratio]="1.5" src="assets/birds/bird-1.png">-->
+<!--    <img class="bird-2" appParallax [ratio]="2" src="assets/birds/bird-2.png">-->
+<!--    <img class="bird-3" appParallax [ratio]="2.5" src="assets/birds/bird-3.png">-->
+<!--</div>-->
 
 <div class="content">
-    <div class="d-flex flex-row justify-content-center product-name" [@inOutAnimation]>
-        <div>
-            <div class="product-heading" appParallax [ratio]="1">FireFLY<span>®</span></div>
-            <div class="product-bird-diverter" appParallax [ratio]="1">Bird Diverters</div>
+    <section class="d-flex flex-row justify-content-center product-name" [@inOutAnimation]>
+        <img class="background-towers" src="assets/background-towers.png">
+        <img class="firefly-wireframe" src="assets/product/wireframe-2.png" appParallax [speed]="-0.5">
+        <div class="product-heading-div">
+            <div class="product-heading">FireFly<span>®</span></div>
+            <div class="product-bird-diverter">Bird Diverters</div>
         </div>
-    </div>
-    <div class="content-1">
-        <div>What is it?</div>
-    </div>
+    </section>
+    <section class="features" id="eff-clamp">
+        <div class="features-subsection" id="features-subsection" (scroll)="featuresSubsectionScrolled($event)">
+            <div class="clamp-content">
+                <div class="w-50 clamp-details">
+                    <div class="">
+                        <div class="font-size-4 font-weight-700 line-height-for-product">One for all.</div>
+                        <div class="font-size-3 font-weight-500 line-height-for-product">High quality clamp</div>
+                        <div class="font-size-3 font-weight-500 line-height-for-product">Apt for all wires.</div>
+                        <div class="clamp-horizontal-line"></div>
+                        <div class="most-eff">The most efficient bird diverter.</div>
+                        <div class="get-quote-clamp">Get a quote now</div>
+                    </div>
+                </div>
+                <div class="w-50 d-flex flex-column justify-content-center">
+                    <img class="clamp-image" src="assets/product/clamp2.png">
+                </div>
+            </div>
+            <div class="uv-content">
+                <img class="uv-bird-diverter" src="assets/product/uv/birdDiverter.png">
+                <div id="uv-subsection-1">
+
+                </div>
+                <div id="uv-subsection-2">
+
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

@@ -22,7 +22,13 @@
 
 .product-name {
   width: 100%;
-  padding: 20rem;
+  height: calc(100vh - 100px);
+  //padding-top: 15rem;
+}
+
+.product-heading-div {
+  position: absolute;
+  top: 400px;
 }
 
 .product-heading {
@@ -86,4 +92,140 @@
   top: 80%;
   background: rgba(245, 102, 40, 0.3);
   height: 700px;
+}
+
+
+.background-towers {
+  //position: absolute;
+  width: 100%;
+  height: 100%;
+  //transform: translateY(30px);
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.firefly-wireframe {
+  position: absolute;
+  top: -30px;
+  left: -84px;
+  width: auto;
+  height: 95vh;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: -1;
+  //transform: translateY(30px);
+}
+
+.features {
+  background: #fff;
+  width: 100%;
+  height: calc(100vh - 70px);
+  padding: 0;
+
+  .clamp-content {
+    display: flex;
+    flex-direction: row;
+    background-image: url(background-1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .clamp-details {
+      color: #c03f43;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 10rem;
+    }
+  }
+
+}
+
+.clamp-horizontal-line {
+  height: 5px;
+  width: 465px;
+  margin-top: 1.5rem;
+  background: #c03f43;
+}
+
+.most-eff {
+  font-size: 1.85rem;
+  margin-top: 1rem;
+}
+
+.get-quote-clamp {
+  width: 220px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  border: 3px solid #c03f43;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 2;
+  transition-duration: 0.3s;
+  &:hover {
+    background: #c03f43;
+    color: #d6d0ca;
+  }
+}
+
+.line-height-for-product {
+  line-height: 1.3;
+}
+
+.clamp-image {
+  animation: wobble 1s infinite;
+}
+
+@keyframes wobble {
+  0% {
+    width: 120%;
+    transform: translateX(-240px);
+  }
+  50% {
+    width: 122%;
+    transform: translateX(-250px);
+  }
+  100% {
+    width: 120%;
+    transform: translateX(-240px);
+  }
+}
+
+
+.features-subsection {
+  width: 100%;
+  height: 100%;
+  //overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.uv-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+#uv-subsection-1 {
+  background: #dcdcda;
+  width: 30%;
+  height: 100%;
+}
+#uv-subsection-2 {
+  background: #ba70ff;
+  width: 70%;
+  height: 100%;
+}
+
+.uv-bird-diverter {
+  //position: absolute;
+  z-index: 10;
+  transform: translate(-64px, -790px);
+  /* top: 100px; */
+  width: auto;
+  height: calc(100vh - 150px);
 }

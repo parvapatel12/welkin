@@ -2,6 +2,7 @@
   height: 100px;
   background: white;
   overflow: hidden;
+  transition-duration: 0.3s;
 }
 
 .active {
@@ -48,22 +49,20 @@
   }
 }
 
-.logo-div {
-  height: 100%;
-  line-height: 6;
-}
-
 .main-logo {
-  width: 300px;
+  width: 100px;
+  transition-duration: 0.3s;
 }
 
-.logo-div-2 {
+.logo-div {
   height: 100%;
   width: 110px;
   text-align: center;
   line-height: 6;
 }
 
-.main-logo-2 {
-  width: 100px;
+@media (max-width: 991px) {
+  .nav-option {
+    display: none;
+  }
 }

@@ -6,15 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelkinHeaderComponent } from '../project/welkin-header/welkin-header.component';
 import { ProductBirdDiverterComponent } from '../project/product-bird-diverter/product-bird-diverter.component';
-import { ParallaxDirective } from '../project/directives/parallax.directive';
+import { RellaxDirective } from '../project/directives/rellax.directive';
+import {ParallaxDirective} from '../project/directives/parallax.directive';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WelkinHeaderComponent,
-    ProductBirdDiverterComponent,
-    ParallaxDirective
-  ],
+    declarations: [
+        AppComponent,
+        WelkinHeaderComponent,
+        ProductBirdDiverterComponent,
+        RellaxDirective,
+        ParallaxDirective
+    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

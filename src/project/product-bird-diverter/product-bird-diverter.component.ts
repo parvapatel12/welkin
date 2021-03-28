@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {min} from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-bird-diverter',
@@ -30,14 +31,47 @@ import {animate, style, transition, trigger} from '@angular/animations';
   ],
 })
 export class ProductBirdDiverterComponent implements OnInit {
-    showProduct = false;
+
+    scrolledDown = false;
+    clampDiv: any;
+    featuresSubsection: any;
 
   constructor() { }
 
   ngOnInit(): void {
-      setInterval(() => {
-          this.showProduct = !this.showProduct;
-      }, 2000);
+      this.clampDiv = document.getElementById('eff-clamp');
+      this.featuresSubsection = document.getElementById('features-subsection');
   }
+
+  getMinimum(a: number, b: number): number {
+      return a < b ? a : b;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: any){
+      if (window.scrollY > 100) {
+          this.scrolledDown = true;
+      } else {
+          this.scrolledDown = false;
+      }
+      if (window.scrollY >= 845) {
+          this.featuresSubsection.style.overflow = 'auto';
+      } else {
+          this.featuresSubsection.style.overflow = 'hidden';
+      }
+      this.clampDiv.style.padding = this.getMinimum(50, window.scrollY/20) + 'px';
+  }
+
+
+    featuresSubsectionScrolled($event: any) {
+        // console.log($event.target.scrollTop);
+        if ($event.target.scrollTop > 0) {
+            // @ts-ignore
+            document.querySelector('body').style.overflow = 'hidden';
+        } else {
+            // @ts-ignore
+            document.querySelector('body').style.overflow = 'auto';
+        }
+    }
 
 }
