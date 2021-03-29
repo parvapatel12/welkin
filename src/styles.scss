@@ -4,6 +4,10 @@
 //  font-family: "Montserrat";
 //}
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #f4f4f4;
   font-family: Montserrat;
@@ -26,6 +30,9 @@ body {
   font-size: 4rem;
 }
 
+.font-weight-900 {
+  font-weight: 900;
+}
 .font-weight-700 {
   font-weight: 700;
 }
