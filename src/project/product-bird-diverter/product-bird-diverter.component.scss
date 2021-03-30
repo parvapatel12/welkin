@@ -5,13 +5,13 @@
 
 @keyframes bird-diverter {
   0% {
-    transform: translate(-5px, -220px) rotate(2deg);
+    transform: translate(-15px, -220px) rotate(2deg);
   }
   50% {
-    transform: translate(5px, -220px) rotate(-2deg);
+    transform: translate(-5px, -220px) rotate(-2deg);
   }
   100% {
-    transform: translate(-5px, -220px) rotate(2deg);
+    transform: translate(-15px, -220px) rotate(2deg);
   }
 }
 
@@ -102,6 +102,33 @@
   //transform: translateY(30px);
   object-fit: cover;
   opacity: 0.4;
+}
+
+.windmill-wings {
+  position: absolute;
+  width: 225px;
+  height: 225px;
+  top: 53%;
+  right: 5.9%;
+  z-index: 2;
+  //transform: translateY(30px);
+  object-fit: cover;
+  //opacity: 0.4;
+  animation: windmillWings 5s infinite;
+  animation-timing-function: linear;
+  //transform-origin: 224px 215px;
+  transform-origin: 125px 124px;
+}
+@keyframes windmillWings {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
 
 .firefly-wireframe {
