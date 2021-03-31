@@ -1,6 +1,5 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, EventEmitter, OnInit, Output} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
-import {min} from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-bird-diverter',
@@ -55,6 +54,7 @@ export class ProductBirdDiverterComponent implements OnInit {
 
     scrolledDown = false;
     fireflyWireframe1: any;
+    windmillWings: any;
     clampDiv: any;
     featuresSubsection: any;
     showClampDetails = false;
@@ -62,12 +62,15 @@ export class ProductBirdDiverterComponent implements OnInit {
     showSizeDetails = false;
     showGlowDetails = false;
 
+    @Output() scrollDownStatus = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
       this.clampDiv = document.getElementById('eff-clamp');
       this.featuresSubsection = document.getElementById('features-subsection');
       this.fireflyWireframe1 = document.getElementById('firefly-wireframe-1');
+      this.windmillWings = document.getElementById('windmill-wings');
   }
 
   getMinimum(a: number, b: number): number {
@@ -84,7 +87,16 @@ export class ProductBirdDiverterComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: any){
-      this.scrolledDown = this.toggleVisibility(window.scrollY, 100);
+      // this.scrolledDown = this.toggleVisibility(window.scrollY, 100);
+      if (window.scrollY > 100) {
+          this.scrolledDown = true;
+          this.scrollDownStatus.emit(this.scrolledDown);
+          this.windmillWings.style.top = '50%';
+      } else {
+          this.scrolledDown = false;
+          this.scrollDownStatus.emit(this.scrolledDown);
+          this.windmillWings.style.top = '53%';
+      }
       // this.featuresSubsection.style.overflow = this.toggleVisibility(window.scrollY, 844) ? 'auto' : 'hidden';
       if (window.scrollY >= 845) {
           this.featuresSubsection.style.overflow = 'auto';

@@ -8,6 +8,9 @@ import { WelkinHeaderComponent } from '../project/welkin-header/welkin-header.co
 import { ProductBirdDiverterComponent } from '../project/product-bird-diverter/product-bird-diverter.component';
 import { RellaxDirective } from '../project/directives/rellax.directive';
 import {ParallaxDirective} from '../project/directives/parallax.directive';
+import { SideBarComponent } from '../project/side-bar/side-bar.component';
+import { ConnectUsComponent } from '../project/connect-us/connect-us.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -15,13 +18,16 @@ import {ParallaxDirective} from '../project/directives/parallax.directive';
         WelkinHeaderComponent,
         ProductBirdDiverterComponent,
         RellaxDirective,
-        ParallaxDirective
+        ParallaxDirective,
+        SideBarComponent,
+        ConnectUsComponent
     ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

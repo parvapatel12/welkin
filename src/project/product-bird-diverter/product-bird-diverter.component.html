@@ -1,10 +1,7 @@
-<app-welkin-header [scrolledDown]="scrolledDown">
-</app-welkin-header>
-<div>
-
-</div>
+<!--<app-welkin-header [scrolledDown]="scrolledDown">-->
+<!--</app-welkin-header>-->
 <div class="d-flex flex-row justify-content-center animation-div">
-    <img class="bird-diverter-gif" src="assets/birdDiverter2.gif">
+    <img class="bird-diverter-gif" src="assets/birdDiverter.gif">
 </div>
 <!--<div class="background-clouds">-->
 <!--    <img class="clouds-1" appParallax [ratio]="1.5" src="assets/clouds-1.png">-->
@@ -16,15 +13,16 @@
 <!--    <img class="bird-3" appParallax [ratio]="2.5" src="assets/birds/bird-3.png">-->
 <!--</div>-->
 
-<div class="content">
+<div class="content" id="main-content">
     <section class="d-flex flex-row justify-content-center product-name" [@inOutAnimation]>
-        <img class="background-towers" src="assets/background-towers2.png">
-        <img class="windmill-wings" src="assets/windmill-wings2.png">
+        <img class="background-towers" src="assets/background-towers3.png">
+        <img class="firefly-name" src="assets/firefly2.png" appParallax [speed]="-0.5">
+        <img class="windmill-wings" id="windmill-wings" src="assets/windmill-wings2.png">
         <img class="firefly-wireframe" id="firefly-wireframe-1" src="assets/product/wireframe-2.png" appParallax [speed]="-0.5">
-        <div class="product-heading-div">
-            <div class="product-heading">FireFly<span>®</span></div>
-            <div class="product-bird-diverter">Bird Diverters</div>
-        </div>
+<!--        <div class="product-heading-div">-->
+<!--            <div class="product-heading">FireFly<sup class="font-size-2">®</sup></div>-->
+<!--            <div class="product-bird-diverter">Bird Diverters</div>-->
+<!--        </div>-->
     </section>
     <section class="features" id="eff-clamp">
         <div class="features-subsection" id="features-subsection" (scroll)="featuresSubsectionScrolled($event)">

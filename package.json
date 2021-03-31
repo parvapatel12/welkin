@@ -23,6 +23,7 @@
     "bootstrap": "^4.6.0",
     "rellax": "^1.12.1",
     "rxjs": "~6.6.0",
+    "smooth-scrollbar": "^8.6.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
