@@ -433,3 +433,21 @@
     text-shadow: 0 0 10px #34b200;
   }
 }
+
+.get-quote-glow {
+  width: 220px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  border: 3px solid #fff;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 2;
+  transition-duration: 0.3s;
+  &:hover {
+    border: 3px solid #34b200;
+    background: #34b200;
+    color: #000c34;
+  }
+}
