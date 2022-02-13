@@ -1,6 +1,6 @@
 <!--<app-welkin-header [scrolledDown]="scrolledDown">-->
 <!--</app-welkin-header>-->
-<div class="d-flex flex-row justify-content-center animation-div">
+<div class="d-flex flex-row justify-content-center animation-div user-select-none">
     <img class="bird-diverter-gif" src="assets/birdDiverter.gif">
 </div>
 <!--<div class="background-clouds">-->
@@ -14,7 +14,7 @@
 <!--</div>-->
 
 <div class="content" id="main-content">
-    <section class="d-flex flex-row justify-content-center product-name" [@inOutAnimation]>
+    <section class="d-flex flex-row justify-content-center product-name user-select-none" [@inOutAnimation]>
         <img class="background-towers" src="assets/background-towers3.png">
         <img class="firefly-name" src="assets/firefly2.png" appParallax [speed]="-0.5">
         <img class="windmill-wings" id="windmill-wings" src="assets/windmill-wings2.png">
@@ -24,7 +24,7 @@
 <!--            <div class="product-bird-diverter">Bird Diverters</div>-->
 <!--        </div>-->
     </section>
-    <section class="features" id="eff-clamp">
+    <section class="features user-select-none" id="eff-clamp">
         <div class="features-subsection" id="features-subsection" (scroll)="featuresSubsectionScrolled($event)">
             <div class="clamp-content">
                 <div class="w-50 d-flex">

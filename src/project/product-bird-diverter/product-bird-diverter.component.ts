@@ -1,4 +1,4 @@
-import {Component, HostListener, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, HostListener, EventEmitter, OnInit, Output, OnChanges, SimpleChanges} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -58,9 +58,9 @@ export class ProductBirdDiverterComponent implements OnInit {
     clampDiv: any;
     featuresSubsection: any;
     showClampDetails = false;
-    showUVDetails = false;
-    showSizeDetails = false;
-    showGlowDetails = false;
+    showUVDetails = true;
+    showSizeDetails = true;
+    showGlowDetails = true;
 
     @Output() scrollDownStatus = new EventEmitter<any>();
 
@@ -71,6 +71,19 @@ export class ProductBirdDiverterComponent implements OnInit {
       this.featuresSubsection = document.getElementById('features-subsection');
       this.fireflyWireframe1 = document.getElementById('firefly-wireframe-1');
       this.windmillWings = document.getElementById('windmill-wings');
+
+      if (window.innerWidth < 1500) {
+          this.windmillWings.style.visibility = 'hidden';
+      }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+      if (window.innerWidth < 1500) {
+          this.windmillWings.style.visibility = 'hidden';
+      } else {
+          this.windmillWings.style.visibility = 'visible';
+      }
   }
 
   getMinimum(a: number, b: number): number {
@@ -101,7 +114,7 @@ export class ProductBirdDiverterComponent implements OnInit {
       if (window.scrollY >= 845) {
           this.featuresSubsection.style.overflow = 'auto';
       } else {
-          this.featuresSubsection.style.overflow = 'hidden';
+          this.featuresSubsection.style.overflow = 'auto';
           this.fireflyWireframe1.style.left = window.scrollY/20 + 'px';
           this.fireflyWireframe1.style.height = (95 + (window.scrollY/20)) + 'vh';
       }
@@ -110,9 +123,9 @@ export class ProductBirdDiverterComponent implements OnInit {
   }
 
   featuresSubsectionScrolled($event: any) {
-      console.log($event.target.scrollTop);
+      // console.log($event.target.scrollTop);
       // @ts-ignore
-      document.querySelector('body').style.overflow = this.toggleVisibility($event.target.scrollTop, 0) ? 'hidden' : 'auto';
+      // document.querySelector('body').style.overflow = this.toggleVisibility($event.target.scrollTop, 0) ? 'hidden' : 'auto';
       // if ($event.target.scrollTop > 0) {
       //     // @ts-ignore
       //     document.querySelector('body').style.overflow = 'hidden';
@@ -123,9 +136,9 @@ export class ProductBirdDiverterComponent implements OnInit {
       // this.showUVDetails => 330
       // this.showSizeDetails => 1140
       // this.showGlowDetails => 2160
-      this.showUVDetails = this.toggleVisibility($event.target.scrollTop, 400);
-      this.showSizeDetails = this.toggleVisibility($event.target.scrollTop, 1200);
-      this.showGlowDetails = this.toggleVisibility($event.target.scrollTop, 2220);
+      // this.showUVDetails = this.toggleVisibility($event.target.scrollTop, 400);
+      // this.showSizeDetails = this.toggleVisibility($event.target.scrollTop, 1200);
+      // this.showGlowDetails = this.toggleVisibility($event.target.scrollTop, 2220);
   }
 
 }
